@@ -1,4 +1,4 @@
-mixed-port: 10801
+mixed-port: 7890
 allow-lan: true
 bind-address: "*"
 find-process-mode: strict
@@ -19,17 +19,21 @@ dns:
   prefer-h3: false
   listen: 0.0.0.0:53
   default-nameserver:
-    - 1.1.1.1
+    - 223.5.5.5
+
   enhanced-mode: fake-ip
 
   fake-ip-range: 198.10.0.1/16
 
+  nameserver:
+    - 1.1.1.1#PROXY
+
 proxies:
-  - name: "Vision"
+  - name: Vision
     type: vless
     server: 
     port: 
-    uuid: chika
+    uuid: 
     network: tcp
     tls: true
     udp: true
@@ -37,36 +41,36 @@ proxies:
     servername: 
     client-fingerprint: chrome
 
-  - name: "Vision-REALITY"
+  - name: Vision-REALITY
     type: vless
     server: 
     port: 
-    uuid: chika
+    uuid: 
     network: tcp
     tls: true
     udp: true
     flow: xtls-rprx-vision
-    servername: www.lovelive-anime.jp
+    servername: 
     reality-opts:
-      public-key: Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw
-      short-id: 6ba85179e30d4fc2
+      public-key: 
+      short-id: 
     client-fingerprint: chrome
 
-  - name: "gRPC-REALITY"
+  - name: gRPC-REALITY
     type: vless
     server: 
     port: 
-    uuid: chika
+    uuid: 
     network: grpc
     tls: true
     udp: true
-    flow: 
-    servername: www.lovelive-anime.jp
+    flow: null
+    servername: 
     grpc-opts:
-      grpc-service-name: "grpc"
+      grpc-service-name: grpc
     reality-opts:
-      public-key: Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw
-      short-id: 6ba85179e30d4fc2
+      public-key: 
+      short-id: 
     client-fingerprint: chrome
 
 proxy-groups:
@@ -76,10 +80,14 @@ proxy-groups:
       - Vision
       - Vision-REALITY
       - gRPC-REALITY
+      - H2-REALITY
 
 rules:
   - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,category-games@cn,DIRECT
   - GEOSITE,geolocation-!cn,PROXY
   - GEOSITE,cn,DIRECT
+  - GEOSITE,private,DIRECT
+  - GEOIP,cn,DIRECT
   - GEOIP,private,DIRECT,no-resolve
   - MATCH,PROXY

@@ -1,10 +1,59 @@
-**推荐使用：** 
+## **推荐配置：** 
 
 :rocket:VLESS-XTLS-Vision
 
 :rocket:VLESS-XTLS-uTLS-REALITY
 
-:+1:**XTLS Vision [简介](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
+:rocket:VLESS-gRPC-uTLS-REALITY
+
+| | 自己准备证书 | TLS in TLS 特征 | 通过 CDN 访问 | HTTP/2 多路复用 |
+| :--- | :---: | :---: | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :x: | :x: | :x: |
+| **VLESS-XTLS-uTLS-REALITY** | :x: | :x: | :x: | :x: |
+| **VLESS-gRPC-uTLS-REALITY** | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: |
+
+**Windows 客户端**
+| | v2rayN | Clash Verge |
+| :--- | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |:heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :x: |
+* Clash Verge 需要使用 Clash Meta Kernel
+
+**Android 客户端**
+| | [v2rayNG](https://github.com/2dust/v2rayNg/releases) | [NekoBox](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases) | [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases) |
+| :--- | :---: | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :x: |
+
+**iOS 客户端**
+| | [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118) | [Wings X Client](https://apps.apple.com/app/wings-x-client/id6446119727) |
+| :--- | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :x: | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :x: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :x: | :heavy_check_mark: |
+
+**OpenWrt 客户端
+| | ShadowSocksR Plus+ | PassWall |
+| :--- | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :x: | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :x: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :x: | :heavy_check_mark: |
+
+| | v2rayN | v2rayNG | NekoBox | Shadowrocket | Wings X Client | SSR Plus+ | PassWall | Meta Kernel |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
+
+:+1:**XTLS Vision [简介](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install) [客户端配置示例](https://github.com/chika0801/Xray-examples/tree/main/VLESS-XTLS-Vision)**
 
 :+1:**REALITY [设计哲学](https://github.com/XTLS/Xray-core/issues/1689#issuecomment-1439447009) [配置模板说明](https://github.com/XTLS/REALITY#readme) [安装指南](https://github.com/chika0801/Xray-install/blob/main/REALITY.md)**
 
@@ -20,11 +69,11 @@
 
 **:star:Star [this project](https://github.com/XTLS/REALITY) to make the next future a REALITY.**
 
-**使用提醒：** 
+## **使用提醒：** 
 
-<details><summary>点击查看</summary><br>
+<details><summary>点击查看</summary>
 
-:exclamation::exclamation::exclamation:
+### :exclamation:
 
 相对于 XTLS Vision 的使用基数，目前几乎没有收到 **配置正确** 的 Vision 被封端口的报告，**配置正确** 指的是：
 
@@ -45,7 +94,7 @@
 
 如果你之前用了其它协议导致 TCP/443 端口被封，**Vision 并没有“解封已经被封的端口”的能力**，换个 IP 或端口 [#1.3](https://github.com/XTLS/Xray-core/issues/1670#issuecomment-1436240888)
 
-:exclamation::exclamation::exclamation:
+### :exclamation:
 
 看来好多人还不知道代码里 Vision 只支持纯净入站或另一个 Vision 入站，~~当然要改也是不难的~~ [#2.1](https://github.com/XTLS/Xray-core/issues/1612#issuecomment-1418829266)
 
@@ -56,7 +105,7 @@
 因为根据历史，机场会用 SS 或 VMess 中转 XTLS 出墙，XTLS 把苦力活全干了，还给 GFW 喂了大量数据，却对社区没有任何帮助
 我觉得这样并不好，所以我不会去改它，当然 PR is acceptable [#2.2](https://github.com/XTLS/Xray-core/issues/1612#issuecomment-1418880212)
 
-:exclamation::exclamation::exclamation:
+### :exclamation:
 
 现在可以直接配置 REALITY H2 服务端，实测 N 个请求只开一条 H2，延迟超低，纵享丝滑。"flow" 为空，"network" 改为 "h2" 即可。
 
@@ -84,7 +133,7 @@ REALITY 支持 gRPC 是顺手写的，just for fun，~~毕竟相比于 H2 大家
 你可以看到 Xray-core 内 REALITY 的第一个 commit 就有 REALITY H2 客户端支持，本来是没打算支持 gRPC 的。
 ~~但是 REALITY WS 就算了吧，这个组合属实没有必要。~~ [#3.4](https://github.com/XTLS/Xray-core/discussions/1719#discussioncomment-5138312)
 
-:exclamation::exclamation::exclamation:
+### :exclamation:
 
 关于机场，说实话，我对机场落地这类技术，持保留态度。
 
@@ -105,7 +154,7 @@ TLS 类一疯狂，指纹和 TLS in TLS 检测就被重点安排上了，反而�
 
 根据目前的反馈，暂时只有部分地区的 GFW 把该策略应用到了 UDP，且暂时只是封端口，~~但是一旦机场大规模上，就~~ [#4.2](https://github.com/XTLS/Xray-core/issues/1767#issuecomment-1465101806)
 
-:exclamation::exclamation::exclamation:
+### :exclamation:
 
 不稀罕，你不说我差点忘了，去年我有个套 CF 的 WSS 遇到了不断升级的“智能墙”：
 
@@ -123,7 +172,7 @@ TLS 类一疯狂，指纹和 TLS in TLS 检测就被重点安排上了，反而�
 
 **所以我现在的建议是：不要用 WSS，并且它应当被列为 deprecated**。套 CDN 有 gRPC，直连有 N 种姿势，已无任何必要用 WSS。 [#5.2](https://github.com/XTLS/Xray-core/issues/1750#issuecomment-1459469821)
 
-:exclamation::exclamation::exclamation:
+### :exclamation:
 
 对于这一点，我建议大家修改一下 policy 的 handshake 和 connIdle 等，不要用默认值，不然特征太明显
 
@@ -135,4 +184,9 @@ TLS 类一疯狂，指纹和 TLS in TLS 检测就被重点安排上了，反而�
 
 服务端指纹特征是一个值得解决的问题。 [#6.2](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1382042986)
 
+### :exclamation:
+
+~~总有人问这个问题我是没想到的~~，我系统性地回答一下：首先对于非 REALITY 客户端，REALITY 服务端只是端口转发。其次你直接访问 https://IP ，浏览器发的 TLS Client Hello 中不含 SNI，HTTP 头中的 Host 也不对，此时会得到何种响应完全取决于目标网站的策略，大概率会得到奇奇怪怪的响应，这是正常的，当然你的浏览器还会报证书不符。最后若你想用浏览器验证 REALITY 的端口转发，正确的做法是修改系统 hosts 文件，将目标域名指向你服务端的 IP，再用浏览器直接访问目标域名，可以访问即正常，并且你可以在浏览器 F12 的 Network 中看到实际上连接的是你服务端的 IP。 [#7](https://github.com/XTLS/Xray-core/discussions/1800#discussioncomment-5321705)
+
 </details>
+
