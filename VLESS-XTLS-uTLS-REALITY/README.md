@@ -66,6 +66,8 @@
 
 </details>
 
+### [sing-box 配置示例](https://github.com/chika0801/sing-box-examples/tree/main/VLESS-XTLS-uTLS-REALITY)
+
 ### ShadowSocksR Plus+ 配置示例
 
 <details><summary>点击查看</summary><br>
