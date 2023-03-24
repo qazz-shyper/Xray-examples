@@ -38,28 +38,6 @@
 
 </details>
 
-### Clash Meta Kernel 配置示例
-
-<details><summary>点击查看</summary><br>
-
-```
-  - name: "Vision"
-    type: vless
-    server: chika.example.com
-    port: 443
-    uuid: chika
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: 
-    client-fingerprint: chrome
-```
-
-</details>
-
-### [sing-box 配置示例](https://github.com/chika0801/sing-box-examples/tree/main/VLESS-XTLS-Vision)
-
 ### Shadowrocket 配置示例
 
 <details><summary>点击查看</summary><br>
