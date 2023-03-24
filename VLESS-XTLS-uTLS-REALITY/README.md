@@ -43,31 +43,6 @@
 
 </details>
 
-### Clash Meta Kernel 配置示例
-
-<details><summary>点击查看</summary><br>
-
-```
-  - name: "Vision-REALITY"
-    type: vless
-    server: 服务端的域名 或 IP
-    port: 443
-    uuid: chika
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: www.lovelive-anime.jp
-    reality-opts:
-      public-key: Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw
-      short-id: 6ba85179e30d4fc2
-    client-fingerprint: chrome
-```
-
-</details>
-
-### [sing-box 配置示例](https://github.com/chika0801/sing-box-examples/tree/main/VLESS-XTLS-uTLS-REALITY)
-
 ### ShadowSocksR Plus+ 配置示例
 
 <details><summary>点击查看</summary><br>
