@@ -1,4 +1,4 @@
-### v2rayN - V6.17及以上版本 配置示例
+### v2rayN - V6.19及以上版本 配置示例
 
 <details><summary>点击查看</summary><br>
 
@@ -15,7 +15,7 @@
 
 </details>
 
-### v2rayNG - V1.8.0及以上版本 配置示例
+### v2rayNG - V1.8.1及以上版本 配置示例
 
 <details><summary>点击查看</summary><br>
 
