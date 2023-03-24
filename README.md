@@ -45,6 +45,15 @@
 | **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
 | **VLESS-H2-uTLS-REALITY** | :x: | :x: |
 
+### **使用 sing-box**
+
+| | [sing-box](https://github.com/SagerNet/sing-box/releases) |
+| :--- | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: |
+
 ### **iOS**
 | | [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118) | [Wings X](https://apps.apple.com/app/wings-x-client/id6446119727) |
 | :--- | :---: | :---: |
