@@ -33,7 +33,7 @@
                 "security": "reality",
                 "realitySettings": {
                     "show": false, // 若为 true，输出调试信息
-                    "dest": "8003",
+                    "dest": "/dev/shm/nginx.sock",
                     "xver": 1,
                     "serverNames": [
                         "" // 证书中包含的域名
