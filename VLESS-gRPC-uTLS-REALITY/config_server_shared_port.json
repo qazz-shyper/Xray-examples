@@ -83,8 +83,7 @@
             "streamSettings": {
                 "network": "grpc",
                 "grpcSettings": {
-                    "serviceName": "grpc", // 指定服务名称
-                    "multiMode": true
+                    "serviceName": "grpc" // 指定服务名称
                 },
                 "sockopt": {
                     "acceptProxyProtocol": true
