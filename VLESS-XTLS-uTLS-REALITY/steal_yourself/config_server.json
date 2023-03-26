@@ -36,7 +36,7 @@
                     "dest": "/dev/shm/nginx.sock",
                     "xver": 1,
                     "serverNames": [
-                        "" // 证书中包含的域名
+                        "" // 由 Nginx 加载的 TLS 证书中包含的域名
                     ],
                     "privateKey": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU", // 执行 xray x25519 生成，填 "Private key" 的值
                     "shortIds": [ // 客户端可用的 shortId 列表，可用于区分不同的客户端
