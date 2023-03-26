@@ -14,7 +14,7 @@
 | Fingerprint | chrome |
 | PublicKey | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | ShortId | 6ba85179e30d4fc2 |
-| SpiderX | / |
+| SpiderX | 留空 |
 
 ![1](https://user-images.githubusercontent.com/88967758/224341358-e30ace37-4da6-4e80-b630-e4a7246667fb.png)
 
@@ -40,7 +40,7 @@
 | Fingerprint | chrome |
 | PublicKey | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | ShortID | 6ba85179e30d4fc2 |
-| SpiderX | / |
+| SpiderX | 留空 |
 
 </details>
 
