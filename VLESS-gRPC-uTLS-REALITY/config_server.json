@@ -53,7 +53,7 @@
                     ]
                 },
                 "grpcSettings": {
-                    "serviceName": "grpc"
+                    "serviceName": "grpc" // 指定服务名称
                 }
             },
             "sniffing": {
