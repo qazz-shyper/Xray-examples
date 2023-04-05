@@ -1,4 +1,4 @@
-## **配置：** 
+## **配置介绍：** 
 
 | | 无需注册域名 | 解决 TLS in TLS | 自带多路复用 | 通过 CDN 访问 |
 | :--- | :---: | :---: | :---: | :---: |
@@ -7,9 +7,9 @@
 | :rocket:**VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 | :rocket:**VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: |
 
-:+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install) [客户端配置示例](https://github.com/chika0801/Xray-examples/tree/main/VLESS-XTLS-Vision)**
+:+1:**XTLS Vision [原理](https://github.com/XTLS/Xray-core/discussions/1295) [安装指南](https://github.com/chika0801/Xray-install)**
 
-:+1:**REALITY [设计哲学](https://github.com/XTLS/Xray-core/issues/1689#issuecomment-1439447009) [配置模板说明](https://github.com/XTLS/REALITY#readme) [安装指南](https://github.com/chika0801/Xray-install/blob/main/REALITY.md)**
+:+1:**REALITY [设计哲学](https://github.com/XTLS/Xray-core/issues/1689#issuecomment-1439447009) [配置说明](https://github.com/XTLS/REALITY#readme) [安装指南](https://github.com/chika0801/Xray-install/blob/main/REALITY.md)**
 
 :exclamation:**Xray [使用警告](https://github.com/chika0801/Xray-examples/blob/main/warning.md)**
 
@@ -25,10 +25,9 @@
 
 **:star:Star [this project](https://github.com/XTLS/REALITY) to make the next future a REALITY.**
 
-## **客户端：** 
+## **GUI 客户端：** 
 
-### **使用 Xray-core**
-
+### Windows / Android
 | | [v2rayN](https://github.com/2dust/v2rayN/releases) | [v2rayNG](https://github.com/2dust/v2rayNg/releases) |
 | :--- | :---: | :---: |
 | **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |
@@ -36,36 +35,28 @@
 | **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
 | **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
 
-### **使用 sing-box**
+### OpenWrt
+| | [PassWall](https://github.com/xiaorouji/openwrt-passwall) | [PassWall 2](https://github.com/xiaorouji/openwrt-passwall2) | [ShadowSocksR Plus+](https://github.com/fw876/helloworld) | [luci-app-xray](https://github.com/yichya/luci-app-xray) |
+| :--- | :---: | :---: | :---: | :---: |
+| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
-| | [sing-box](https://github.com/SagerNet/sing-box/releases) |
-| :--- | :---: |
-| **VLESS-XTLS-Vision** | :heavy_check_mark: |
-| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: |
-| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: |
-| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: |
-
-### **使用 Clash Meta kernel**
-
-| | [Clash Verge](https://github.com/zzzgydi/clash-verge/releases) | [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases) |
+### iOS
+| | [Wings X](https://apps.apple.com/app/wings-x-client/id6446119727) | [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118) |
 | :--- | :---: | :---: |
 | **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-H2-uTLS-REALITY** | :x: | :x: |
+| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :x: |
+| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :x: |
+| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :x: |
 
-### **iOS**
-| | [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118) | [Wings X](https://apps.apple.com/app/wings-x-client/id6446119727) |
-| :--- | :---: | :---: |
-| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-XTLS-uTLS-REALITY** | :x: | :heavy_check_mark: |
-| **VLESS-gRPC-uTLS-REALITY** | :x: | :heavy_check_mark: |
-| **VLESS-H2-uTLS-REALITY** | :x: | :heavy_check_mark: |
+## **其它支持**
 
-### **OpenWrt**
-| | [ShadowSocksR Plus+](https://github.com/fw876/helloworld) | [PassWall](https://github.com/xiaorouji/openwrt-passwall) |
-| :--- | :---: | :---: |
-| **VLESS-XTLS-Vision** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-XTLS-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
-| **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: |
+- [sing-box](https://github.com/SagerNet/sing-box/releases)
+  - [NekoBox for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
+  - [NekoRay](https://github.com/MatsuriDayo/nekoray/releases)
+
+- [Clash Meta kernel](https://github.com/MetaCubeX/Clash.Meta/releases)
+  - [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases)
+  - [Clash Verge](https://github.com/zzzgydi/clash-verge/releases)
