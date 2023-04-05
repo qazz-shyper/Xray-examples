@@ -55,7 +55,6 @@
 
 - [sing-box](https://github.com/SagerNet/sing-box/releases)
   - [NekoBox for Android](https://github.com/MatsuriDayo/NekoBoxForAndroid/releases)
-  - [NekoRay](https://github.com/MatsuriDayo/nekoray/releases)
 
 - [Clash Meta kernel](https://github.com/MetaCubeX/Clash.Meta/releases)
   - [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases)
