@@ -54,7 +54,7 @@
 ## **其它支持**
 
 - [sing-box](https://github.com/SagerNet/sing-box/releases)
-  - [sing-box](https://github.com/chika0801/sing-box-examples)
+  - [sing-box examples](https://github.com/chika0801/sing-box-examples)
 - [Clash Meta kernel](https://github.com/MetaCubeX/Clash.Meta/releases)
   - [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases)
   - [Clash Verge](https://github.com/zzzgydi/clash-verge/releases)
