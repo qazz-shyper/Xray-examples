@@ -46,7 +46,6 @@
 ## **其它支持**
 
 - [sing-box](https://github.com/SagerNet/sing-box/releases)
-  - [sing-box examples](https://github.com/chika0801/sing-box-examples)
 
 ### iOS / Android
 | | [SFI](https://sing-box.sagernet.org/installation/clients/sfi/) | [SFA](https://sing-box.sagernet.org/installation/clients/sfa/) |
