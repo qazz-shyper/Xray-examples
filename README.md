@@ -55,6 +55,8 @@
 
 - [sing-box](https://github.com/SagerNet/sing-box/releases)
   - [sing-box examples](https://github.com/chika0801/sing-box-examples)
+  - [iOS SFI](https://sing-box.sagernet.org/installation/clients/sfi/)
+  - [Android SFA](https://sing-box.sagernet.org/installation/clients/sfa/)
 - [Clash Meta kernel](https://github.com/MetaCubeX/Clash.Meta/releases)
   - [Clash Verge](https://github.com/zzzgydi/clash-verge/releases)
   - [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases)
