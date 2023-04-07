@@ -6,8 +6,8 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 
 打开 **wireguard.json**，复制"private_key"的值，粘贴到"secretKey": "",处，复制"reserved"的值，粘贴到"reserved":[0, 0, 0],处
 
+**"outbounds"**
 ```
-    "outbounds": [
         {
             "protocol": "wireguard",
             "settings": {
@@ -29,13 +29,12 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
             },
             "tag": "wireguard"
         }
-    ]
 ```
 
-编辑 **/usr/local/etc/xray/config.json**，按需增加"routing"和"outbounds"的内容（注意检查json语法），输入 `systemctl restart xray` 重启Xray，访问ip.sb查看是否为Cloudflare的IP
+编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"** 和 **"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问ip.sb查看是否为Cloudflare的IP
 
+**"routing"**
 ```
-    "routing": {
         "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
@@ -54,7 +53,6 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                 "outboundTag": "wireguard"
             }
         ]
-    }
 ```
 
 **VLESS-XTLS-Vision** 配置示例
