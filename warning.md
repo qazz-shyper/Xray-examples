@@ -154,3 +154,18 @@ TLS 类一疯狂，指纹和 TLS in TLS 检测就被重点安排上了，反而�
 所以 @tdjnodj 想法的价值就在于，**不严的时候，我们可以在 REALITY 外面套一个已知被识别，但被留着监控的协议**，可以是 Socks5 / HTTP / Shadowsocks / VMess / Trojan / VLESS without flow 等等，让 GFW 错误地以为我们在访问 [www.bing.com](http://www.bing.com) ，~碟中谍之我预判了你的预判~。
 
 这一想法扩展了 REALITY 的应用场景，毕竟直接使用 REALITY 的对外表现为端口转发，万一被无脑封，~说不定这一想法会上位成主流玩法~。 [#8](https://github.com/XTLS/Xray-core/discussions/1811#discussioncomment-5355075)
+
+### :memo:
+
+**简单来说，不是能不能的问题，而是应不应该的问题，这些协议握手时要连接目标服务端，你的国外机器填个国内域名合适吗**
+
+这个原因是非常显而易见的啊，写模板时我以为一笔带过提醒一下，大家就明白了，~真的是我高估了~  [#9.1](https://github.com/XTLS/Xray-core/issues/1891#issuecomment-1499073501)
+
+---
+
+啊，这个还要说吗，对不起，是我高估了大家的。。。
+
+https://twitter.com/kkitown/status/1636277251179438081 这位更是重量级
+
+其实非要填国内网站，也不是不行，问题是，人家又没放国外机器上，其次，会产生各种回国流量，一眼 REALITY 加端口转发 [#9.2](https://github.com/XTLS/REALITY/pull/2#issuecomment-1479956295)
+
