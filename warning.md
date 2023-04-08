@@ -128,13 +128,7 @@ TLS 类一疯狂，指纹和 TLS in TLS 检测就被重点安排上了，反而�
 
 对于这一点，我建议大家修改一下 policy 的 handshake 和 connIdle 等，不要用默认值，不然特征太明显
 
-~中间人多收集些数据，分析出握手 60 秒超时 + 连接 300 秒超时，这不是 *ray 还能是~啥 [#6.1](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1376887076)
-
----
-
-回落当然是必要的，尤其是现在我们大规模用 uTLS 模仿浏览器指纹，GFW 一个探测，没网页的话岂不是一眼假？
-
-服务端指纹特征是一个值得解决的问题。 [#6.2](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1382042986)
+~中间人多收集些数据，分析出握手 60 秒超时 + 连接 300 秒超时，这不是 *ray 还能是~啥 [#6](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1376887076)
 
 ### :memo:
 
@@ -169,3 +163,40 @@ https://twitter.com/kkitown/status/1636277251179438081 这位更是重量级
 
 其实非要填国内网站，也不是不行，问题是，人家又没放国外机器上，其次，会产生各种回国流量，一眼 REALITY 加端口转发 [#9.2](https://github.com/XTLS/REALITY/pull/2#issuecomment-1479956295)
 
+### :memo:
+
+回落当然是必要的，尤其是现在我们大规模用 uTLS 模仿浏览器指纹，GFW 一个探测，没网页的话岂不是一眼假？
+
+服务端指纹特征是一个值得解决的问题。 [#10.1](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1382042986)
+
+---
+
+我看到 sing-box 的 Trojan 有回落，不过有这样一段话：
+
+> 没有证据表明 GFW 基于 HTTP 响应检测并阻止 Trojan 服务器，并且在服务器上打开标准 http/s 端口是一个更大的特征。
+
+~其实去年就看到了，并且去年我还看到隔壁也这么说，没有证据表明 balabala，不知道“回落无用论”又是什么政治正确还是~
+
+**还是想得不够多。**
+
+GFW 有没有区别对待有/无回落的服务器，目前没有人对比测试过，但一个很浅显的道理是：
+
+**当你发现没有回落好像也不会被封时，有没有一种可能，正是因为绝大多数人都配置了回落，GFW 才没把它纳入封锁依据。** **如果大家的代理服务器普遍没有回落，那么会是一个谁都看得出来的、送人头的特征，GFW 一定会将其纳入封锁依据。**
+
+多想一步，就能推出“回落无用论”是错的。鼓励大家不配回落，更是自废武功，~GFW 喜闻乐见~。
+
+当然现在我更推荐 TLS 级别的回落，也就是 REALITY，解决了传统回落的指纹问题，~VLESS 回落的文章还咕着就又成传统的了~。 [#10.2](https://github.com/XTLS/Xray-core/pull/1916#issuecomment-1500457011)
+
+---
+
+> 可以理解成是推俗称的自己偷自己吗？😂
+
+是的，而且解决了 TLS 最令人诟病的 CA 问题，并且限制了客户端只能用浏览器指纹，都更安全，~早预告过 REALITY 是默秒全~。
+
+关于回落是否有必要，之前预告 REALITY 时，我也以另一个角度评论过：[#1511 (comment)](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1382042986)
+
+> 回落当然是必要的，尤其是现在我们大规模用 uTLS 模仿浏览器指纹，GFW 一个探测，没网页的话岂不是一眼假？
+
+现在的情况是，Golang 的 TLS 指纹早已明显被针对了，于是我们不得不大规模用浏览器指纹。
+
+然后 GFW 天天看你用浏览器访问某个网站，好奇探测一下，连网页都没，这，不太合适吧，~当 GFW 傻~。 [#10.3](https://github.com/XTLS/Xray-core/pull/1916#issuecomment-1500491248)
