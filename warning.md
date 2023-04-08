@@ -126,13 +126,16 @@ TLS 类一疯狂，指纹和 TLS in TLS 检测就被重点安排上了，反而�
 
 ### :memo:
 
+> ~当然也有可能是被疯狂主动探测，记录握手超时时间，看像不像 Xray 的默认 60 秒~
+
 对于这一点，我建议大家修改一下 policy 的 handshake 和 connIdle 等，不要用默认值，不然特征太明显
 
-~中间人多收集些数据，分析出握手 60 秒超时 + 连接 300 秒超时，这不是 *ray 还能是~啥 [#6](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1376887076)
+~中间人多收集些数据，分析出握手 60 秒超时 + 连接 300 秒超时，这不是 *ray 还能是啥~ [#6](https://github.com/XTLS/Xray-core/issues/1511#issuecomment-1376887076)
 
 ### :memo:
 
-~总有人问这个问题我是没想到的~，我系统性地回答一下：首先对于非 REALITY 客户端，REALITY 服务端只是端口转发。其次你直接访问 https://IP ，浏览器发的 TLS Client Hello 中不含 SNI，HTTP 头中的 Host 也不对，此时会得到何种响应完全取决于目标网站的策略，大概率会得到奇奇怪怪的响应，这是正常的，当然你的浏览器还会报证书不符。最后若你想用浏览器验证 REALITY 的端口转发，正确的做法是修改系统 hosts 文件，将目标域名指向你服务端的 IP，再用浏览器直接访问目标域名，可以访问即正常，并且你可以在浏览器 F12 的 Network 中看到实际上连接的是你服务端的 IP。 [#7](https://github.com/XTLS/Xray-core/discussions/1800#discussioncomment-5321705)
+1. [XTLS-REALITY 自己偷自己时，serverName填的域名与实际SSL证书包含的域名不一致时，也能连接 #1681 (comment)](https://github.com/XTLS/Xray-core/issues/1681#issuecomment-1436655742)
+2. ~总有人问这个问题我是没想到的~，我系统性地回答一下：首先对于非 REALITY 客户端，REALITY 服务端只是端口转发。其次你直接访问 https://IP ，浏览器发的 TLS Client Hello 中不含 SNI，HTTP 头中的 Host 也不对，此时会得到何种响应完全取决于目标网站的策略，大概率会得到奇奇怪怪的响应，这是正常的，当然你的浏览器还会报证书不符。最后若你想用浏览器验证 REALITY 的端口转发，正确的做法是修改系统 hosts 文件，将目标域名指向你服务端的 IP，再用浏览器直接访问目标域名，可以访问即正常，并且你可以在浏览器 F12 的 Network 中看到实际上连接的是你服务端的 IP。 [#7](https://github.com/XTLS/Xray-core/discussions/1800#discussioncomment-5321705)
 
 ### :memo:
 
