@@ -36,7 +36,9 @@ XTLS Vision 完全没有特征吗？也不是，我就可以把它封得很精�
 
 ---
 
-如果你之前用了其它协议导致 TCP/443 端口被封，**Vision 并没有“解封已经被封的端口”的能力**，换个 IP 或端口 [#1.3](https://github.com/XTLS/Xray-core/issues/1670#issuecomment-1436240888)
+如果你之前用了其它协议导致 TCP/443 端口被封，**Vision 并没有“解封已经被封的端口”的能力**，换个 IP 或端口
+
+如果这是你新开到的 IP，说明这个 IP 的 TCP/443 端口已经被别人搞封了，换个 IP 或端口 [#1.3](https://github.com/XTLS/Xray-core/issues/1670#issuecomment-1436240888)
 
 ### :memo:
 
