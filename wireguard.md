@@ -166,9 +166,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         "levels": {
             "0": {
                 "handshake": 2,
-                "connIdle": 120,
-                "uplinkOnly": 1,
-                "downlinkOnly": 1
+                "connIdle": 120
             }
         }
     }
