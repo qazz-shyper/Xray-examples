@@ -66,7 +66,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
             }
 ```
 
-**VLESS-XTLS-Vision** 配置示例
+:exclamation:配置示例用 **VLESS-XTLS-uTLS-REALITY** 举例，如需改用其它协议组合，请自行参照修改。
 
 ```
 {
@@ -105,35 +105,34 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                         "flow": "xtls-rprx-vision"
                     }
                 ],
-                "decryption": "none",
-                "fallbacks": [
-                    {
-                        "dest": "8001",
-                        "xver": 1
-                    },
-                    {
-                        "alpn": "h2",
-                        "dest": "8002",
-                        "xver": 1
-                    }
-                ]
+                "decryption": "none"
             },
             "streamSettings": {
                 "network": "tcp",
-                "security": "tls",
-                "tlsSettings": {
-                    "rejectUnknownSni": true,
-                    "minVersion": "1.2",
-                    "certificates": [
-                        {
-                            "ocspStapling": 3600,
-                            "certificateFile": "/etc/ssl/private/fullchain.cer",
-                            "keyFile": "/etc/ssl/private/private.key"
-                        }
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "www.lovelive-anime.jp:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "lovelive-anime.jp",
+                        "www.lovelive-anime.jp"
+                    ],
+                    "privateKey": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU",
+                    "shortIds": [
+                        "",
+                        "a1",
+                        "bc19",
+                        "b2da06",
+                        "2d940fe6",
+                        "b85e293fa1",
+                        "4a9f72b5c803",
+                        "19f70b462cea5d",
+                        "6ba85179e30d4fc2"
                     ]
                 }
             },
-            "sniffing": {  // 建议使用此参数
+            "sniffing": { // 建议使用此参数
                 "enabled": true,
                 "destOverride": [
                     "http",
