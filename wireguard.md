@@ -63,7 +63,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         "loglevel": "warning"
     },
     "routing": {
-        "domainStrategy": "IPIfNonMatch",
+        "domainStrategy": "IPIfNonMatch", // 建议使用此参数
         "rules": [
             {
                 "type": "field",
@@ -122,7 +122,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                     ]
                 }
             },
-            "sniffing": {
+            "sniffing": {  // 建议使用此参数
                 "enabled": true,
                 "destOverride": [
                     "http",
