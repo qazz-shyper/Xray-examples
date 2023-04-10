@@ -31,7 +31,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         }
 ```
 
-编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"outbounds"**，**"inbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问ip.sb查看是否为Cloudflare的IP
+编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"outbounds"**，**"inbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问bgp.he.net查看是否为Cloudflare的IP
 
 **"routing"**
 ```
@@ -40,7 +40,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
             {
                 "type": "field",
                 "domain": [
-                    "ip.sb",
+                    "bgp.he.net",
                     "geosite:openai"
                 ],
                 "outboundTag": "wireguard"
@@ -79,7 +79,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
             {
                 "type": "field",
                 "domain": [
-                    "ip.sb",
+                    "bgp.he.net",
                     "geosite:openai"
                 ],
                 "outboundTag": "wireguard"
