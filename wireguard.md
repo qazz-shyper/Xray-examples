@@ -119,7 +119,6 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                     ],
                     "privateKey": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU",
                     "shortIds": [
-                        "",
                         "6ba85179e30d4fc2"
                     ]
                 }
