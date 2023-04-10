@@ -115,19 +115,11 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                     "dest": "www.lovelive-anime.jp:443",
                     "xver": 0,
                     "serverNames": [
-                        "lovelive-anime.jp",
                         "www.lovelive-anime.jp"
                     ],
                     "privateKey": "2KZ4uouMKgI8nR-LDJNP1_MHisCJOmKGj9jUjZLncVU",
                     "shortIds": [
                         "",
-                        "a1",
-                        "bc19",
-                        "b2da06",
-                        "2d940fe6",
-                        "b85e293fa1",
-                        "4a9f72b5c803",
-                        "19f70b462cea5d",
                         "6ba85179e30d4fc2"
                     ]
                 }
