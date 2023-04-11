@@ -45,11 +45,11 @@
                 "tlsSettings": {
                     "rejectUnknownSni": true,
                     "minVersion": "1.2",
-                    "certificates": [
+                    "certificates": [ // 证书文件需要使用fullchain（全SSL证书链），若包含网站证书，会出现如v2rayN能通，v2rayNG不能通的类似现象
                         {
                             "ocspStapling": 3600,
-                            "certificateFile": "/etc/ssl/private/fullchain.cer", // 证书文件，建议用fullchain（全SSL证书链），若只有网站证书，会出现v2rayN能使用，v2rayNG不能使用的情况（或相反），通常不区分扩展名
-                            "keyFile": "/etc/ssl/private/private.key" // 私钥文件
+                            "certificateFile": "/etc/ssl/private/fullchain.cer", // 证书文件，通常不区分扩展名
+                            "keyFile": "/etc/ssl/private/private.key" // 私钥文件，通常不区分扩展名
                         }
                     ]
                 }
