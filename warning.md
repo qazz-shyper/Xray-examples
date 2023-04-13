@@ -246,9 +246,9 @@ GFW 有没有区别对待有/无回落的服务器，目前没有人对比测试
 
 ---
 
-**对于 Xray 这样的代理类软件，内存占用大头在于对被代理数据的缓存，能用的内存多就能多缓存一些数据，麻烦搞清楚状况。** [11.1](https://github.com/XTLS/Xray-core/issues/1880#issuecomment-1505982997)
+**对于 Xray 这样的代理类软件，内存占用大头在于对被代理数据的缓存，能用的内存多就能多缓存一些数据，麻烦搞清楚状况。** [#11.1](https://github.com/XTLS/Xray-core/issues/1880#issuecomment-1505982997)
 
 ---
 
-换句话说，内存占用大头取决于你要的缓存数据能力，**每个代理软件的默认策略不一样**，你调低缓存自然就可以实现数据的好看。 [11.2](https://github.com/XTLS/Xray-core/issues/1880#issuecomment-1506049230)
+换句话说，内存占用大头取决于你要的缓存数据能力，**每个代理软件的默认策略不一样**，你调低缓存自然就可以实现数据的好看。 [#11.2](https://github.com/XTLS/Xray-core/issues/1880#issuecomment-1506049230)
 
