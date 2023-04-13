@@ -57,7 +57,8 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 
 **"inbounds"**
 ```
-            "sniffing": { // 建议使用此参数
+            // 建议使用此参数
+            "sniffing": {
                 "enabled": true,
                 "destOverride": [
                     "http",
