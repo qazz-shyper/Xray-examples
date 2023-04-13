@@ -31,11 +31,11 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         }
 ```
 
-编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"outbounds"**，**"inbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问bgp.he.net查看是否为Cloudflare的IP
+编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"inbounds"**，**"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问bgp.he.net查看是否为Cloudflare的IP
 
 **"routing"**
 ```
-        "domainStrategy": "IPIfNonMatch",
+        "domainStrategy": "IPIfNonMatch", // 建议使用此参数
         "rules": [
             {
                 "type": "field",
@@ -57,7 +57,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 
 **"inbounds"**
 ```
-            "sniffing": {
+            "sniffing": { // 建议使用此参数
                 "enabled": true,
                 "destOverride": [
                     "http",
@@ -74,7 +74,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         "loglevel": "warning"
     },
     "routing": {
-        "domainStrategy": "IPIfNonMatch", // 建议使用此参数
+        "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
                 "type": "field",
@@ -123,7 +123,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                     ]
                 }
             },
-            "sniffing": { // 建议使用此参数
+            "sniffing": {
                 "enabled": true,
                 "destOverride": [
                     "http",
