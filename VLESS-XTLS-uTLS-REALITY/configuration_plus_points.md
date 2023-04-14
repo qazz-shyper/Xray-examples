@@ -8,6 +8,7 @@ EOF
 sysctl -p /etc/sysctl.d/ip_forward.conf
 ```
 
+安装
 ```
 apt install -y iptables-persistent
 ```
