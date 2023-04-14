@@ -1,3 +1,4 @@
+准备
 ```
 cat > /etc/sysctl.d/ip_forward.conf << EOF
 net.ipv4.ip_forward=1
