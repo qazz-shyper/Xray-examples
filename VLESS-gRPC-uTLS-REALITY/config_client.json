@@ -83,9 +83,7 @@
                 },
                 "grpcSettings": {
                     "serviceName": "grpc", // 指定服务名称，与服务端一致
-                    "multiMode": true,
-                    "idle_timeout": 60,
-                    "health_check_timeout": 20
+                    "multiMode": true
                 }
             },
             "tag": "proxy"
