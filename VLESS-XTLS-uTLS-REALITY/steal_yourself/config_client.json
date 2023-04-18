@@ -82,6 +82,12 @@
                     "spiderX": "" // 爬虫初始路径与参数，建议每个客户端不同
                 }
             },
+            "mux": {
+                "enabled": true,
+                "concurrency": -1,
+                "xudpConcurrency": 8,
+                "xudpProxyUDP443": "reject"
+            },
             "tag": "proxy"
         },
         {
