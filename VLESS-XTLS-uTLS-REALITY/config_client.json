@@ -85,7 +85,7 @@
             "mux": {
                 "enabled": true,
                 "concurrency": -1,
-                "xudpConcurrency": 8,
+                "xudpConcurrency": 16,
                 "xudpProxyUDP443": "reject"
             },
             "tag": "proxy"
