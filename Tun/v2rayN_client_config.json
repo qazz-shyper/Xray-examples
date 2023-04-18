@@ -43,7 +43,7 @@
                 }
             },
             "mux": {
-                "enabled": true,
+                "enabled": true, // 若主玩游戏，建议填false
                 "concurrency": -1,
                 "xudpConcurrency": 16,
                 "xudpProxyUDP443": "reject"
