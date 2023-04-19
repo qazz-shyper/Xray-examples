@@ -173,7 +173,6 @@
             "server_port": 10808,
             "udp_fragment": true
         },
-
         {
             "type": "direct",
             "tag": "direct"
