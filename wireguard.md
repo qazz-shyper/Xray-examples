@@ -34,7 +34,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"inbounds"**，**"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问bgp.he.net查看是否为Cloudflare的IP
 
 **"routing"**
-```
+```jsonc
         "domainStrategy": "IPIfNonMatch", // 建议使用此参数
         "rules": [
             {
@@ -56,7 +56,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 ```
 
 **"inbounds"**
-```
+```jsonc
             // 建议使用此参数
             "sniffing": {
                 "enabled": true,
@@ -69,7 +69,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 
 :exclamation:配置示例用 **VLESS-XTLS-uTLS-REALITY** 举例，如需改用其它协议组合，请自行参照修改。
 
-```
+```jsonc
 {
     "log": {
         "loglevel": "warning"
@@ -145,6 +145,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         {
             "protocol": "wireguard",
             "settings": {
+                // 替换成你的 "secretKey"
                 "secretKey": "sOL9HjJEqi7Xd0gtm6C2CWoDtsxXXYpJyj10Pi10KWM=",
                 "address": [
                     "172.16.0.2/32"
@@ -158,6 +159,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                         "endpoint": "engage.cloudflareclient.com:2408"
                     }
                 ],
+                // 替换成你的 "reserved"
                 "reserved":[19, 152, 142],
                 "mtu": 1280
             },
