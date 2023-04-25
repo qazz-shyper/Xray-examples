@@ -15,8 +15,6 @@
 | ShortId | 6ba85179e30d4fc2 |
 | SpiderX | 留空 |
 
-![1](https://user-images.githubusercontent.com/88967758/224332364-0c124692-e578-4dc6-8369-55d00213a991.png)
-
 </details>
 
 ### v2rayNG - V1.8.1及以上版本 配置示例
