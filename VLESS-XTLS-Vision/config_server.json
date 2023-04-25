@@ -11,6 +11,12 @@
                     "geoip:cn"
                 ],
                 "outboundTag": "block"
+            },
+            {
+                "type": "field",
+                "port": "443",
+                "network": "udp",
+                "outboundTag": "block"
             }
         ]
     },
