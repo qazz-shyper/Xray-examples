@@ -4,7 +4,7 @@
 
 | 名称 | 值 |
 | :--- | :--- |
-| 地址 | 服务端的域名 或 IP |
+| 地址 | 服务端的 IP |
 | 端口 | 443 |
 | 用户ID | chika |
 | 流控 | xtls-rprx-vision |
@@ -23,7 +23,7 @@
 
 | 名称 | 值 |
 | :--- | :--- |
-| 地址(address) | 服务端的域名 或 IP |
+| 地址(address) | 服务端的 IP |
 | 端口(prot) | 443 |
 | 用户ID(id) | chika |
 | 流控(flow) | xtls-rprx-vision |
@@ -49,7 +49,7 @@
 | :--- | :--- |
 | 类型 | Xray |
 | 传输协议 | VLESS |
-| 地址（支持域名） | 服务端的域名 或 IP |
+| 地址（支持域名） | 服务端的 IP |
 | 端口 | 443 |
 | 加密方式 | none |
 | ID | chika |
@@ -74,7 +74,7 @@
 | :--- | :--- |
 | 服务器节点类型 | V2Ray/Xray |
 | V2Ray/XRay 协议 | VLESS |
-| 服务器地址 | 服务端的域名 或 IP |
+| 服务器地址 | 服务端的 IP |
 | 端口 | 443 |
 | Vmess/VLESS ID (UUID) | chika |
 | VLESS 加密 | none |
