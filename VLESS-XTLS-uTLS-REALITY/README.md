@@ -9,7 +9,7 @@
 | 用户ID | chika |
 | 流控 | xtls-rprx-vision |
 | 传输层安全 | reality |
-| SNI | `www.lovelive-anime.jp` |
+| SNI | `www.apple.com` |
 | Fingerprint | chrome |
 | PublicKey | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | ShortId | 6ba85179e30d4fc2 |
@@ -35,7 +35,7 @@
 | 伪装域名(host) | 留空 |
 | path | 留空 |
 | 传输层安全(tls) | reality |
-| SNI | `www.lovelive-anime.jp` |
+| SNI | `www.apple.com` |
 | Fingerprint | chrome |
 | PublicKey | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | ShortID | 6ba85179e30d4fc2 |
@@ -58,7 +58,7 @@
 | TLS | 勾上 |
 | flow | xtls-rprx-vision |
 | REALITY | 勾上 |
-| 域名 | `www.lovelive-anime.jp` |
+| 域名 | `www.apple.com` |
 | 公钥 | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | Short Id | 6ba85179e30d4fc2 |
 | Spider X | 留空 |
@@ -89,7 +89,7 @@
 | spiderX | 留空 |
 | 流控（Flow） | xtls-rprx-vision |
 | 指纹伪造 | chrome |
-| TLS 主机名 | `www.lovelive-anime.jp` |
+| TLS 主机名 | `www.apple.com` |
 | Mux | 不勾 |
 | 启用自动切换 | 不勾 |
 | 本地端口 | 1234 |
