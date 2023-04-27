@@ -40,7 +40,7 @@
                 "security": "reality",
                 "realitySettings": {
                     "show": false, // 若为 true，输出调试信息
-                    "dest": "1.1.1.1:443", // 浏览器访问 https://IP，若返回了证书，即该网站有“默认证书”
+                    "dest": "1.1.1.1:443", // 浏览器访问 https://IP，若返回了证书，即该网站有“默认证书”。一般来说该网站收到了不认识的 SNI 时，也会返回该证书
                     "xver": 0,
                     "serverNames": [
                         "" // 留空
