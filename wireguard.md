@@ -34,9 +34,15 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
 编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"inbounds"**，**"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问bgp.he.net查看是否为Cloudflare的IP
 
 **"routing"**
-```jsonc
-        "domainStrategy": "IPIfNonMatch", // 建议使用此参数
+```
+        "domainStrategy": "IPIfNonMatch",
         "rules": [
+            {
+                "type": "field",
+                "port": "443",
+                "network": "udp",
+                "outboundTag": "block"
+            },
             {
                 "type": "field",
                 "domain": [
@@ -54,16 +60,16 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
             },
             {
                 "type": "field",
-                "port": "443",
-                "network": "udp",
+                "ip": [
+                    "geoip:private"
+                ],
                 "outboundTag": "block"
             }
         ]
 ```
 
 **"inbounds"**
-```jsonc
-            // 建议使用此参数
+```
             "sniffing": {
                 "enabled": true,
                 "destOverride": [
@@ -86,6 +92,12 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         "rules": [
             {
                 "type": "field",
+                "port": "443",
+                "network": "udp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
                 "domain": [
                     "bgp.he.net",
                     "geosite:openai"
@@ -101,8 +113,9 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
             },
             {
                 "type": "field",
-                "port": "443",
-                "network": "udp",
+                "ip": [
+                    "geoip:private"
+                ],
                 "outboundTag": "block"
             }
         ]
@@ -159,8 +172,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         {
             "protocol": "wireguard",
             "settings": {
-                // 替换成你的 "secretKey"
-                "secretKey": "sOL9HjJEqi7Xd0gtm6C2CWoDtsxXXYpJyj10Pi10KWM=",
+                "secretKey": "", // 粘贴你的 "secretKey" 值
                 "address": [
                     "172.16.0.2/32"
                 ],
@@ -173,8 +185,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                         "endpoint": "engage.cloudflareclient.com:2408"
                     }
                 ],
-                // 替换成你的 "reserved"
-                "reserved":[19, 152, 142],
+                "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
                 "mtu": 1280
             },
             "tag": "wireguard"
