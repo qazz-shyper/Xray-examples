@@ -1,6 +1,6 @@
 ### 注意：
 
-:exclamation:gRPC/H2 推荐在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能完全避免断流现象。推荐使用以下[方法](https://www.51cto.com/article/666745.html)尽量减轻断流现象的发生。
+:exclamation:gRPC/H2 推荐在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能完全避免断流现象。推荐使用以下[方法](https://cloud.tencent.com/developer/article/1841996)尽量减轻断流现象的发生。
 
 <details><summary>点击查看</summary><br>
 
