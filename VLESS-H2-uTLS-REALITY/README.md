@@ -1,3 +1,27 @@
+### 注意：
+
+:exclamation:gRPC/H2 推荐在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能避免断流现象。推荐使用以下[方法](https://cloud.tencent.com/developer/article/1841996)减少断流现象发生。
+
+<details><summary>点击查看</summary><br>
+
+```
+cat > /etc/sysctl.conf << EOF
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_fin_timeout = 30
+net.ipv4.tcp_keepalive_time = 1200
+net.ipv4.tcp_max_syn_backlog = 8192
+net.ipv4.tcp_max_tw_buckets = 5000
+EOF
+```
+
+```
+sysctl -p
+```
+
+</details>
+
 ### v2rayN - V6.19及以上版本 配置示例
 
 <details><summary>点击查看</summary><br>
