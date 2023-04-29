@@ -1,6 +1,6 @@
 ### 注意：
 
-:exclamation:gRPC/H2 推荐在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能避免断流现象。推荐使用以下[方法](https://cloud.tencent.com/developer/article/1841996)减少断流现象发生。除此以外，你可以参考[文档](https://xtls.github.io/Xray-docs-next/config/transports/grpc.html#grpcobject)，使用健康检查功能。
+:exclamation:gRPC/H2 推荐在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能避免断流现象。推荐使用以下[方法](https://cloud.tencent.com/developer/article/1841996)减少断流现象发生。除此以外，你可以参考[文档](https://xtls.github.io/Xray-docs-next/config/transports/h2.html#httpobject)，使用健康检查功能。
 
 <details><summary>点击查看</summary><br>
 
