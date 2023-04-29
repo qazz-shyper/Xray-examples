@@ -21,7 +21,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                         "allowedIPs": [
                             "0.0.0.0/0"
                         ],
-                        "endpoint": "engage.cloudflareclient.com:2408"
+                        "endpoint": "162.159.192.1:2408"
                     }
                 ],
                 "reserved":[0, 0, 0],
@@ -182,7 +182,7 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                         "allowedIPs": [
                             "0.0.0.0/0"
                         ],
-                        "endpoint": "engage.cloudflareclient.com:2408"
+                        "endpoint": "162.159.192.1:2408"
                     }
                 ],
                 "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
