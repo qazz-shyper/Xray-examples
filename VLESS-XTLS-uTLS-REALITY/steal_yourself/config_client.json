@@ -30,26 +30,12 @@
             "protocol": "socks",
             "settings": {
                 "udp": true
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
             }
         },
         {
             "listen": "127.0.0.1",
             "port": 10809,
-            "protocol": "http",
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
-            }
+            "protocol": "http"
         }
     ],
     "outbounds": [
@@ -81,12 +67,6 @@
                     "shortId": "6ba85179e30d4fc2", // 与服务端一致
                     "spiderX": "" // 爬虫初始路径与参数，建议每个客户端不同
                 }
-            },
-            "mux": {
-                "enabled": true,
-                "concurrency": -1,
-                "xudpConcurrency": 8,
-                "xudpProxyUDP443": "reject"
             },
             "tag": "proxy"
         },
