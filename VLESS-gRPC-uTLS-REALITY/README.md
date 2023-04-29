@@ -14,6 +14,9 @@ net.ipv4.tcp_keepalive_time = 1200
 net.ipv4.tcp_max_syn_backlog = 8192
 net.ipv4.tcp_max_tw_buckets = 5000
 EOF
+```
+
+```
 sysctl -p
 ```
 
