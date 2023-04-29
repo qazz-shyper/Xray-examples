@@ -30,26 +30,12 @@
             "protocol": "socks",
             "settings": {
                 "udp": true
-            },
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
             }
         },
         {
             "listen": "127.0.0.1",
             "port": 10809,
-            "protocol": "http",
-            "sniffing": {
-                "enabled": true,
-                "destOverride": [
-                    "http",
-                    "tls"
-                ]
-            }
+            "protocol": "http"
         }
     ],
     "outbounds": [
