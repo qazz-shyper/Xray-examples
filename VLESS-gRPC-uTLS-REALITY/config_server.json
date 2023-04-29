@@ -51,7 +51,7 @@
                     ]
                 },
                 "grpcSettings": {
-                    "serviceName": "grpc" // 指定服务名称
+                    "serviceName": "lovelive" // 指定服务名称
                 }
             },
             "sniffing": {
