@@ -34,7 +34,7 @@ sysctl -p
 | 流控 | 留空 |
 | 传输协议 | grpc |
 |  | multi |
-| 路径 | grpc |
+| 路径 | lovelive |
 | 传输层安全 | reality |
 | SNI | `www.lovelive-anime.jp` |
 | Fingerprint | chrome |
@@ -58,7 +58,7 @@ sysctl -p
 | 传输协议(network) | grpc |
 | gRPC 传输模式 (mode) | multi |
 | 伪装域名(host) | 留空 |
-| path | grpc |
+| path | lovelive |
 | 传输层安全(tls) | reality |
 | SNI | `www.lovelive-anime.jp` |
 | Fingerprint | chrome |
@@ -89,7 +89,7 @@ sysctl -p
 | Spider X | 留空 |
 | 指纹伪造 | chrome |
 | 传输协议 | gRPC |
-| ServiceName | grpc |
+| ServiceName | lovelive |
 | gRPC 传输模式 | multi |
 | 健康检查 | 不勾 |
 | 初始窗口大小 | 0 |
@@ -110,7 +110,7 @@ sysctl -p
 | Vmess/VLESS ID (UUID) | chika |
 | VLESS 加密 | none |
 | 传输协议 | gRPC |
-| gRPC 服务名称 | grpc |
+| gRPC 服务名称 | lovelive |
 | gRPC 模式 | Multi |
 | 初始窗口大小 | 0 |
 | H2/gRPC 健康检查 | 不勾 |
