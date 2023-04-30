@@ -22,7 +22,8 @@ curl -Lso- https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/wa
                     {
                         "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
                         "allowedIPs": [
-                            "0.0.0.0/0"
+                            "0.0.0.0/0",
+                            "::/0"
                         ],
                         "endpoint": "162.159.192.1:2408"
                     }
@@ -184,7 +185,8 @@ curl -Lso- https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/wa
                     {
                         "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
                         "allowedIPs": [
-                            "0.0.0.0/0"
+                            "0.0.0.0/0",
+                            "::/0"
                         ],
                         "endpoint": "162.159.192.1:2408"
                     }
