@@ -1,18 +1,25 @@
 ### 注意：
 
-:exclamation:gRPC/H2 建议在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能避免断流现象。建议[调整系统内核参数](https://cloud.tencent.com/developer/article/1841996)减少断流现象发生。除此以外，你可以参考[文档](https://xtls.github.io/Xray-docs-next/config/transports/h2.html#httpobject)，使用健康检查功能。
+:exclamation:gRPC/H2 建议在有优化回程路由（如 CN2-GIA、AS9929/AS10099、CMI/CMIN2、AS4837 等）的VPS上使用。并且VPS所在的地区距离你的位置越近越好。即使你的VPS满足以上条件，仍然不能避免断流现象。建议参考ChatGPT的回答优化系统内核参数。除此以外，你可以参考[文档](https://xtls.github.io/Xray-docs-next/config/transports/h2.html#httpobject)，使用健康检查功能。
 
 <details><summary>点击查看</summary><br>
 
 ```
 cat > /etc/sysctl.conf << EOF
+net.core.somaxconn = 65535
+net.ipv4.tcp_max_syn_backlog = 65535
 net.ipv4.tcp_syncookies = 1
 net.ipv4.tcp_tw_reuse = 1
-net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_fin_timeout = 30
 net.ipv4.tcp_keepalive_time = 1200
+net.ipv4.tcp_keepalive_probes = 5
+net.ipv4.tcp_keepalive_intvl = 15
+net.ipv4.tcp_slow_start_after_idle = 0
+net.ipv4.tcp_mtu_probing = 1
 net.ipv4.tcp_max_syn_backlog = 8192
 net.ipv4.tcp_max_tw_buckets = 5000
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
 EOF
 ```
 
