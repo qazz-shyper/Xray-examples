@@ -268,7 +268,5 @@ GFW 有没有区别对待有/无回落的服务器，目前没有人对比测试
 
 REALITY 以后会出个缓存模式，提前采集目标网站的特征，就不用每次都去拿了，这也是相对于 ShadowTLS 之类的优势之一。
 
-还有就是 REALITY 隐藏玩法的任意 SNI、无 SNI，对 REALITY 来说，只要服务端 serverNames 写了，客户端 serverName 就能填。 我需要说明一下不是只有 1.1.1.1 和 8.8.8.8，而是绝大多数网站都有“默认证书”。不过不希望这个玩法泛滥，因为特征明显。
-
-[#12.2](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532359978)
+还有就是 REALITY 隐藏玩法的任意 SNI、无 SNI，对 REALITY 来说，只要服务端 serverNames 写了，客户端 serverName 就能填。 我需要说明一下不是只有 1.1.1.1 和 8.8.8.8，而是绝大多数网站都有“默认证书”。不过不希望这个玩法泛滥，因为特征明显。 [#12.2](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532359978)
 
