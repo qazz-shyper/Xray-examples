@@ -252,3 +252,23 @@ GFW 有没有区别对待有/无回落的服务器，目前没有人对比测试
 
 换句话说，内存占用大头取决于你要的缓存数据能力，**每个代理软件的默认策略不一样**，你调低缓存自然就可以实现数据的好看。 [#11.2](https://github.com/XTLS/Xray-core/issues/1880#issuecomment-1506049230)
 
+### :memo:
+
+目标网站/域名的选择会极大程度地影响 REALITY 代理的延迟、速度、稳定性等：
+
+1. 至少目前，REALITY 每次都要去拿握手包，需要注意目标网站近不近、稳不稳定（请求多了就把你半拉黑也是一种不稳定）。
+2. 运营商层面可能会给某些域名更高的流量优先级，拥堵时优先保证它们的流量通过。
+3. GFW 层面至少有黑名单（google）和白名单（microsoft），可能还有其它名单，比如偶尔干扰/限速名单（github？）
+
+你们对照排查一下。 [#12.1](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532345891)
+
+---
+
+~也可能是你们天天逮着 microsoft、apple 之类的偷，GFW 开始测试了~，有人说伊朗那边就有运营商在“内测” yahoo 的 IP 白名单。
+
+REALITY 以后会出个缓存模式，提前采集目标网站的特征，就不用每次都去拿了，这也是相对于 ShadowTLS 之类的优势之一。
+
+还有就是 REALITY 隐藏玩法的任意 SNI、无 SNI，对 REALITY 来说，只要服务端 serverNames 写了，客户端 serverName 就能填。 我需要说明一下不是只有 1.1.1.1 和 8.8.8.8，而是绝大多数网站都有“默认证书”。不过不希望这个玩法泛滥，因为特征明显。
+
+[#12.2](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532359978)
+
