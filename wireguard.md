@@ -1,3 +1,9 @@
+使用 **warp-reg**，注册warp
+
+```
+curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/main-linux-amd64 && chmod +x warp-reg && ./warp-reg
+```
+
 使用 **warp-go**，注册warp，导出wireguard配置
 
 ```
