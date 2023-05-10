@@ -147,7 +147,7 @@ curl -Lso- https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/wa
             "settings": {
                 "secretKey": "", // 粘贴你的 "private_key" 值
                 "address": [
-                    "172.16.0.2/32"，
+                    "172.16.0.2/32",
                     "/128" // 粘贴你获得的 warp IPv6 地址，结尾加 /128
                 ],
                 "peers": [
