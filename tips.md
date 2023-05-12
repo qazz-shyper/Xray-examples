@@ -270,3 +270,12 @@ REALITY 以后会出个缓存模式，提前采集目标网站的特征，就不
 
 还有就是 REALITY 隐藏玩法的任意 SNI、无 SNI，对 REALITY 来说，只要服务端 serverNames 写了，客户端 serverName 就能填。 我需要说明一下不是只有 1.1.1.1 和 8.8.8.8，而是绝大多数网站都有“默认证书”。不过不希望这个玩法泛滥，因为特征明显。 [#12.2](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532359978)
 
+### :memo:
+
+都是 TLS，但怎么用 TLS，是有讲究的，有句话我早就想对鼓吹 Trojan 平替 VLESS 的人说：**真以为 Trojan 能用一辈子？** 早在三年前的 VLESS BETA 我就给你们说过，光套一层加密并不能掩盖里面的时序特征，所以 VLESS 有 flow 机制。 但是呢，以前的 GFW 没上手段，简单套个 TLS 在实践上的确还可以用，就像 WSS ALPN 一直很明显，但以前它能用。 它们还能用，我就没必要提前出牌，等 GFW 上了手段，我再继续出牌，并且不推荐大家再用旧的 WS、无 flow 等。
+
+有一点需要再次强调，我支持的始终是 TLS 上的百花齐放，而不是 TCP 上的，原因以前说过很多，可以去 [v2ray](https://github.com/v2ray/v2ray-core/issues/2523#issuecomment-636548331) 翻翻。 前段时间不是有个论文嘛，~算了不想说了，有空时再评论。~ [#13](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532568938)
+
+
+
+
