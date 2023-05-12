@@ -131,7 +131,17 @@ curl -Lso- https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/wa
         ]
     },
     "inbounds": [
-    // 此处省略
+        {
+            // 此处省略
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+        }
     ],
     "outbounds": [
         {
