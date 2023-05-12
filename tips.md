@@ -272,10 +272,18 @@ REALITY 以后会出个缓存模式，提前采集目标网站的特征，就不
 
 ### :memo:
 
+顺便先简单说一下 v1.8.1 [增强版 XUDP](https://github.com/XTLS/Xray-core/issues/1963#issuecomment-1512532299) 的 [Global ID & UoT Migration](https://xtls.github.io/development/protocols/muxcool.html#%E6%96%B0%E5%BB%BA%E5%AD%90%E8%BF%9E%E6%8E%A5-new) 有什么效果：
+
+v1.8.1 以前，你用任何 UoT，假设服务端用 A 端口与多目标通信，若 TCP 断了，比如切换网络，重连后服务端会改用 B 端口。 v1.8.1 开始，你用 VLESS（包括 Mux.Cool），即使 TCP 断了，重连后服务端还是会用 A 端口。
+
+尤其是，对 P2P 有奇效。从某种程度上来说，这才是真正的 FullCone。双端 Xray-core v1.8.1+ 自动启用，无需额外配置。
+
+可以用 [NatTypeTester](https://github.com/HMBSbige/NatTypeTester)，先连接家里 WiFi 测一下，再连接手机热点（流量）测一下，你会发现服务端出口端口没变，~挺神奇的。~
+
+~更多内容，咕咕咕，请等文章。~ [#13](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532488765)
+
+### :memo:
+
 都是 TLS，但怎么用 TLS，是有讲究的，有句话我早就想对鼓吹 Trojan 平替 VLESS 的人说：**真以为 Trojan 能用一辈子？** 早在三年前的 VLESS BETA 我就给你们说过，光套一层加密并不能掩盖里面的时序特征，所以 VLESS 有 flow 机制。 但是呢，以前的 GFW 没上手段，简单套个 TLS 在实践上的确还可以用，就像 WSS ALPN 一直很明显，但以前它能用。 它们还能用，我就没必要提前出牌，等 GFW 上了手段，我再继续出牌，并且不推荐大家再用旧的 WS、无 flow 等。
 
-有一点需要再次强调，我支持的始终是 TLS 上的百花齐放，而不是 TCP 上的，原因以前说过很多，可以去 [v2ray](https://github.com/v2ray/v2ray-core/issues/2523#issuecomment-636548331) 翻翻。 前段时间不是有个论文嘛，~算了不想说了，有空时再评论。~ [#13](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532568938)
-
-
-
-
+有一点需要再次强调，我支持的始终是 TLS 上的百花齐放，而不是 TCP 上的，原因以前说过很多，可以去 [v2ray](https://github.com/v2ray/v2ray-core/issues/2523#issuecomment-636548331) 翻翻。 前段时间不是有个论文嘛，~算了不想说了，有空时再评论。~ [#14](https://github.com/XTLS/Xray-core/issues/2017#issuecomment-1532568938)
