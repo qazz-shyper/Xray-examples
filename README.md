@@ -41,16 +41,4 @@
 | **VLESS-gRPC-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **VLESS-H2-uTLS-REALITY** | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
-## **其它支持**
-
-- [sing-box](https://github.com/SagerNet/sing-box/releases)
-  - [SFA](https://sing-box.sagernet.org/installation/clients/sfa/)
-  - [SFI](https://sing-box.sagernet.org/installation/clients/sfi/)
-- [Clash Meta kernel](https://github.com/MetaCubeX/Clash.Meta/releases)
-  - [Clash Verge](https://github.com/zzzgydi/clash-verge/releases)
-  - [Clash Meta For Android](https://github.com/MetaCubeX/ClashMetaForAndroid/releases)
-  - [MFI](https://t.me/meta_for_ios)
-- iOS
-  - [Wings X](https://apps.apple.com/app/wings-x-client/id6446119727)
-  - [Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)
-  - [Stash](https://apps.apple.com/app/stash/id1596063349)
+**[其它支持](https://github.com/XTLS/Xray-core/blob/main/README.md)**
