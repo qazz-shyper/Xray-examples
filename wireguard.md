@@ -132,7 +132,7 @@ curl -Lso- https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/wa
     },
     "inbounds": [
         {
-            // 此处省略
+            // 粘贴你的服务端配置
             "sniffing": {
                 "enabled": true,
                 "destOverride": [
