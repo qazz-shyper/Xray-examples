@@ -1,10 +1,10 @@
-### v2rayN - V6.17及以上版本 配置示例
+### v2rayN - V6.19及以上版本 配置示例
 
 <details><summary>点击查看</summary><br>
 
 | 名称 | 值 |
 | :--- | :--- |
-| 地址 | 服务端的域名 或 IP |
+| 地址 | 服务端的 IP |
 | 端口 | 443 |
 | 用户ID | chika |
 | 流控 | xtls-rprx-vision |
@@ -13,19 +13,17 @@
 | Fingerprint | chrome |
 | PublicKey | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | ShortId | 6ba85179e30d4fc2 |
-| SpiderX | / |
-
-![1](https://user-images.githubusercontent.com/88967758/224332364-0c124692-e578-4dc6-8369-55d00213a991.png)
+| SpiderX | 留空 |
 
 </details>
 
-### v2rayNG - V1.8.0及以上版本 配置示例
+### v2rayNG - V1.8.1及以上版本 配置示例
 
 <details><summary>点击查看</summary><br>
 
 | 名称 | 值 |
 | :--- | :--- |
-| 地址(address) | 服务端的域名 或 IP |
+| 地址(address) | 服务端的 IP |
 | 端口(prot) | 443 |
 | 用户ID(id) | chika |
 | 流控(flow) | xtls-rprx-vision |
@@ -37,37 +35,13 @@
 | 传输层安全(tls) | reality |
 | SNI | `www.lovelive-anime.jp` |
 | Fingerprint | chrome |
-| Alpn | 留空 |
 | PublicKey | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
 | ShortID | 6ba85179e30d4fc2 |
-| SpiderX | / |
+| SpiderX | 留空 |
 
 </details>
 
-### NekoBox 配置示例
-
-<details><summary>点击查看</summary><br>
-
-| 名称 | 值 |
-| :--- | :--- |
-| 服务器 | 服务端的域名 或 IP |
-| 服务器端口 | 443 |
-| 用户ID | chika |
-| Flow (VLESS Sub-protocol) | xtls-rprx-vision |
-| 包编码 | xudp |
-| 传输协议 | tcp |
-| 传输层加密 | tls |
-| 服务器名称指标 | `www.lovelive-anime.jp` |
-| 应用层协议协商 | 留空 |
-| 证书（链） | 留空 |
-| 允许不安全的连接 | 不选 |
-| uTLS fingerprint | chrome |
-| Reality Public Key | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
-| Reality ShortId | 6ba85179e30d4fc2 |
-
-</details>
-
-### Pass Wall 配置示例
+### PassWall 配置示例
 
 <details><summary>点击查看</summary><br>
 
@@ -75,7 +49,7 @@
 | :--- | :--- |
 | 类型 | Xray |
 | 传输协议 | VLESS |
-| 地址（支持域名） | 服务端的域名 或 IP |
+| 地址（支持域名） | 服务端的 IP |
 | 端口 | 443 |
 | 加密方式 | none |
 | ID | chika |
@@ -92,25 +66,30 @@
 
 </details>
 
-### Clash Meta Kernel 配置示例
+### ShadowSocksR Plus+ 配置示例
 
 <details><summary>点击查看</summary><br>
 
-```
-  - name: Vision-REALITY
-    type: vless
-    server: 服务端的域名 或 IP
-    port: 443
-    uuid: chika
-    network: tcp
-    tls: true
-    udp: true
-    flow: xtls-rprx-vision
-    servername: www.lovelive-anime.jp
-    reality-opts:
-      public-key: Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw
-      short-id: 6ba85179e30d4fc2
-    client-fingerprint: chrome
-```
+| 名称 | 值 |
+| :--- | :--- |
+| 服务器节点类型 | V2Ray/Xray |
+| V2Ray/XRay 协议 | VLESS |
+| 服务器地址 | 服务端的 IP |
+| 端口 | 443 |
+| Vmess/VLESS ID (UUID) | chika |
+| VLESS 加密 | none |
+| 传输协议 | TCP |
+| 伪装类型 | 无 |
+| TLS | 不勾 |
+| REALITY | 勾上 |
+| Public key | Z84J2IelR9ch3k8VtlVhhs5ycBUlXA7wHBWcBrjqnAw |
+| Short ID | 6ba85179e30d4fc2 |
+| spiderX | 留空 |
+| 流控（Flow） | xtls-rprx-vision |
+| 指纹伪造 | chrome |
+| TLS 主机名 | `www.lovelive-anime.jp` |
+| Mux | 不勾 |
+| 启用自动切换 | 不勾 |
+| 本地端口 | 1234 |
 
 </details>

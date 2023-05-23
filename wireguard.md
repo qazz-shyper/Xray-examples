@@ -1,47 +1,62 @@
-使用 **waro-go**，注册warp，导出wireguard配置
+使用 **warp-reg**，注册warp
 
 ```
-mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/warp-go_1.0.8_linux_amd64.tar.gz && tar -xzf ./warp/warp -C ./warp && cp ./warp/warp-go . && chmod 0755 warp-go && rm -r warp && ./warp-go --register && ./warp-go -export-singbox wireguard.json
+curl -sLo warp-reg https://github.com/badafans/warp-reg/releases/download/v1.0/main-linux-amd64 && chmod +x warp-reg && ./warp-reg
 ```
 
-打开 **wireguard.json**，复制"private_key"的值，粘贴到"secretKey": "",处，复制"reserved"的值，粘贴到"reserved":[0, 0, 0],处
+~使用 **warp-go**，注册warp~
 
 ```
-    "outbounds": [
+curl -Lso- https://gitlab.com/ProjectWARP/warp-go/-/releases/v1.0.8/downloads/warp-go_1.0.8_linux_amd64.tar.gz | tar -zxf- warp-go && chmod +x warp-go && ./warp-go -register > /dev/null && ./warp-go -export-singbox wg.json > /dev/null && grep -Eo --color=never '"2606:4700:[0-9a-f:]+/128"|"private_key":"[0-9a-zA-Z\/+]+="|"reserved":\[[0-9]+(,[0-9]+){2}\]' wg.json && rm warp-go warp.conf wg.json
+```
+
+- 复制输出的 IPv6 地址，替换下面配置中的 `2606:4700::`
+- 复制输出的 `private_key` 值，粘贴到下面配置中 `secretKey` 后的 `""` 中
+- 复制输出的 `reserved` 值，粘贴到下面配置中 `reserved` 后的 `[]` 中
+
+**"outbounds"**
+```jsonc
         {
             "protocol": "wireguard",
             "settings": {
-                "secretKey": "",
+                "secretKey": "", // 粘贴你的 "private_key" 值
                 "address": [
-                    "172.16.0.2/32"
+                    "172.16.0.2/32",
+                    "2606:4700::/128" // 粘贴你获得的 warp IPv6 地址，结尾加 /128
                 ],
                 "peers": [
                     {
                         "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
                         "allowedIPs": [
-                            "0.0.0.0/0"
+                            "0.0.0.0/0",
+                            "::/0"
                         ],
-                        "endpoint": "engage.cloudflareclient.com:2408"
+                        "endpoint": "162.159.192.1:2408"
                     }
                 ],
-                "reserved":[0, 0, 0],
+                "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
                 "mtu": 1280
             },
             "tag": "wireguard"
         }
-    ]
 ```
 
-编辑 **/usr/local/etc/xray/config.json**，按需增加"routing"和"outbounds"的内容（注意检查json语法），输入 `systemctl restart xray` 重启Xray，访问ip.sb查看是否为Cloudflare的IP
+编辑 **/usr/local/etc/xray/config.json**，按需增加 **"routing"**，**"inbounds"**，**"outbounds"** 的内容（注意检查json格式），输入 `systemctl restart xray` 重启Xray，访问bgp.he.net查看是否为Cloudflare的IP
 
+**"routing"**
 ```
-    "routing": {
         "domainStrategy": "IPIfNonMatch",
         "rules": [
             {
                 "type": "field",
+                "port": "443",
+                "network": "udp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
                 "domain": [
-                    "ip.sb",
+                    "bgp.he.net",
                     "geosite:openai"
                 ],
                 "outboundTag": "wireguard"
@@ -52,14 +67,32 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                     "geoip:cn"
                 ],
                 "outboundTag": "wireguard"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
             }
         ]
-    }
 ```
 
-**VLESS-XTLS-Vision** 的配置示例
-
+**"inbounds"**
 ```
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ]
+            }
+```
+
+**配置示例**
+
+```jsonc
 {
     "log": {
         "loglevel": "warning"
@@ -69,8 +102,14 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         "rules": [
             {
                 "type": "field",
+                "port": "443",
+                "network": "udp",
+                "outboundTag": "block"
+            },
+            {
+                "type": "field",
                 "domain": [
-                    "ip.sb",
+                    "bgp.he.net",
                     "geosite:openai"
                 ],
                 "outboundTag": "wireguard"
@@ -81,54 +120,25 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
                     "geoip:cn"
                 ],
                 "outboundTag": "wireguard"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "block"
             }
         ]
     },
     "inbounds": [
         {
-            "listen": "0.0.0.0",
-            "port": 443,
-            "protocol": "vless",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "chika",
-                        "flow": "xtls-rprx-vision"
-                    }
-                ],
-                "decryption": "none",
-                "fallbacks": [
-                    {
-                        "dest": "8001",
-                        "xver": 1
-                    },
-                    {
-                        "alpn": "h2",
-                        "dest": "8002",
-                        "xver": 1
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "tcp",
-                "security": "tls",
-                "tlsSettings": {
-                    "rejectUnknownSni": true,
-                    "minVersion": "1.2",
-                    "certificates": [
-                        {
-                            "ocspStapling": 3600,
-                            "certificateFile": "/etc/ssl/private/fullchain.cer",
-                            "keyFile": "/etc/ssl/private/private.key"
-                        }
-                    ]
-                }
-            },
+            // 粘贴你的服务端配置
             "sniffing": {
                 "enabled": true,
                 "destOverride": [
                     "http",
-                    "tls"
+                    "tls",
+                    "quic"
                 ]
             }
         }
@@ -145,34 +155,26 @@ mkdir warp && curl -sLo ./warp/warp https://gitlab.com/ProjectWARP/warp-go/-/rel
         {
             "protocol": "wireguard",
             "settings": {
-                "secretKey": "",
+                "secretKey": "", // 粘贴你的 "private_key" 值
                 "address": [
-                    "172.16.0.2/32"
+                    "172.16.0.2/32",
+                    "/128" // 粘贴你获得的 warp IPv6 地址，结尾加 /128
                 ],
                 "peers": [
                     {
                         "publicKey": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
                         "allowedIPs": [
-                            "0.0.0.0/0"
+                            "0.0.0.0/0",
+                            "::/0"
                         ],
-                        "endpoint": "engage.cloudflareclient.com:2408"
+                        "endpoint": "162.159.192.1:2408"
                     }
                 ],
-                "reserved":[0, 0, 0],
+                "reserved":[0, 0, 0], // 粘贴你的 "reserved" 值
                 "mtu": 1280
             },
             "tag": "wireguard"
         }
-    ],
-    "policy": {
-        "levels": {
-            "0": {
-                "handshake": 2,
-                "connIdle": 120,
-                "uplinkOnly": 1,
-                "downlinkOnly": 1
-            }
-        }
-    }
+    ]
 }
 ```
