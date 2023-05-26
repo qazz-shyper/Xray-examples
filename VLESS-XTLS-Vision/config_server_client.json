@@ -1,0 +1,64 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "direct"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            }
+        },
+        {
+            "port": 10809,
+            "protocol": "http"
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "",
+                        "port": 443,
+                        "users": [
+                            {
+                                "id": "",
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "",
+                    "allowInsecure": false,
+                    "fingerprint": "chrome"
+                }
+            },
+            "tag": "proxy"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        }
+    ]
+}
